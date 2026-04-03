@@ -1,0 +1,26 @@
+# Python
+__pycache__/
+*.pyc
+
+# Virtual environment
+venv/
+env/
+.env
+
+# API keys
+.env
+
+# VS Code
+.vscode/
+
+# Logs
+*.log
+
+# Large files (optional)
+*.csv
+*.h5
+*.pt
+*.pth
+
+# OS files
+.DS_Store
