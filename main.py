@@ -62,10 +62,14 @@ async def upload_file(file: UploadFile = File(...)):
 @app.post("/ask")
 def ask_question(query: Query):
     try:
-        answer = get_answer(query.question)
-        return {"answer": answer}
+        result = get_answer(
+            question=query.question,
+            model_name=query.model,   # 🔥 MUST
+            style=query.style         # 🔥 MUST
+        )
+        return result
     except Exception as e:
-        return {"answer": str(e)}
+        return {"answer": str(e), "sources": []}
 
 
 # ---------------------------
